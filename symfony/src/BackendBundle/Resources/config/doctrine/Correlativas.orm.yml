@@ -1,0 +1,26 @@
+BackendBundle\Entity\Correlativas:
+    type: entity
+    table: correlativas
+    uniqueConstraints:
+        CORRELATIVAS_PK:
+            columns:
+                - ID_CORRELATIVA
+    id:
+        idCorrelativa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_CORRELATIVA
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcionCorrelativa:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: DESCRIPCION_CORRELATIVA
+    lifecycleCallbacks: {  }

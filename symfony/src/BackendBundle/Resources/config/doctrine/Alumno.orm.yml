@@ -1,0 +1,58 @@
+BackendBundle\Entity\Alumno:
+    type: entity
+    table: alumno
+    indexes:
+        ALUMNOPLANESTUDIO_FK:
+            columns:
+                - ID_PLAN
+        ALUMNOUSUARIO_FK:
+            columns:
+                - ID_USUARIO
+    uniqueConstraints:
+        ALUMNO_PK:
+            columns:
+                - ID_ALUMNO
+    id:
+        idAlumno:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_ALUMNO
+            generator:
+                strategy: IDENTITY
+    fields:
+        idPlan:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_PLAN
+        idUsuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_USUARIO
+        dni:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: DNI
+        nombreApellido:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+            column: NOMBRE_APELLIDO
+        ingreso:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+            column: INGRESO
+    lifecycleCallbacks: {  }

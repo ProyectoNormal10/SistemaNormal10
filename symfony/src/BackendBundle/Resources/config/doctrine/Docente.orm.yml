@@ -1,0 +1,36 @@
+BackendBundle\Entity\Docente:
+    type: entity
+    table: docente
+    indexes:
+        DOCENTEUSER_FK:
+            columns:
+                - ID_USUARIO
+    uniqueConstraints:
+        DOCENTE_PK:
+            columns:
+                - ID_DOCENTE
+    id:
+        idDocente:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_DOCENTE
+            generator:
+                strategy: IDENTITY
+    fields:
+        idUsuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_USUARIO
+        nombreApellidoDocente:
+            type: string
+            nullable: true
+            length: 150
+            options:
+                fixed: false
+            column: NOMBRE_APELLIDO_DOCENTE
+    lifecycleCallbacks: {  }

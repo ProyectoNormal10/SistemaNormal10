@@ -1,0 +1,31 @@
+BackendBundle\Entity\Correlatividades:
+    type: entity
+    table: correlatividades
+    indexes:
+        CORRELATIVIDADES2_FK:
+            columns:
+                - ID_ASIGNURA
+        CORRELATIVIDADES_FK:
+            columns:
+                - ID_CORRELATIVA
+    uniqueConstraints:
+        CORRELATIVIDADES_PK:
+            columns:
+                - ID_CORRELATIVA
+                - ID_ASIGNURA
+    id:
+        idCorrelativa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_CORRELATIVA
+        idAsignura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_ASIGNURA
+    lifecycleCallbacks: {  }

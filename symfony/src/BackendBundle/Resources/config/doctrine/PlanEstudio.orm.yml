@@ -1,0 +1,26 @@
+BackendBundle\Entity\PlanEstudio:
+    type: entity
+    table: plan_estudio
+    uniqueConstraints:
+        PLAN_ESTUDIO_PK:
+            columns:
+                - ID_PLAN
+    id:
+        idPlan:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_PLAN
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcionPlan:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: DESCRIPCION_PLAN
+    lifecycleCallbacks: {  }

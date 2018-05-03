@@ -1,0 +1,40 @@
+BackendBundle\Entity\Usuario:
+    type: entity
+    table: usuario
+    uniqueConstraints:
+        USUARIO_PK:
+            columns:
+                - ID_USUARIO
+    id:
+        idUsuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_USUARIO
+            generator:
+                strategy: IDENTITY
+    fields:
+        correoUsuario:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: CORREO_USUARIO
+        passwordUsuario:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: PASSWORD_USUARIO
+        rol:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: ROL
+    lifecycleCallbacks: {  }

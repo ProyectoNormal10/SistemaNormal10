@@ -1,0 +1,31 @@
+BackendBundle\Entity\Mesaalumno:
+    type: entity
+    table: mesaalumno
+    indexes:
+        MESAALUMNO2_FK:
+            columns:
+                - ID_MESA
+        MESAALUMNO_FK:
+            columns:
+                - ID_ALUMNO
+    uniqueConstraints:
+        MESAALUMNO_PK:
+            columns:
+                - ID_ALUMNO
+                - ID_MESA
+    id:
+        idAlumno:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_ALUMNO
+        idMesa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_MESA
+    lifecycleCallbacks: {  }

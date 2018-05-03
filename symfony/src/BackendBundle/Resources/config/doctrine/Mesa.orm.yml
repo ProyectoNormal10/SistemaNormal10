@@ -1,0 +1,40 @@
+BackendBundle\Entity\Mesa:
+    type: entity
+    table: mesa
+    indexes:
+        MESAASIGNATURA_FK:
+            columns:
+                - ID_ASIGNURA
+    uniqueConstraints:
+        MESA_PK:
+            columns:
+                - ID_MESA
+    id:
+        idMesa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_MESA
+            generator:
+                strategy: IDENTITY
+    fields:
+        idAsignura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_ASIGNURA
+        turno:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: TURNO
+        fecha:
+            type: datetime
+            nullable: true
+            column: FECHA
+    lifecycleCallbacks: {  }

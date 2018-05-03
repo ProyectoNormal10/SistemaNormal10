@@ -1,0 +1,45 @@
+BackendBundle\Entity\Asignatura:
+    type: entity
+    table: asignatura
+    indexes:
+        CARRERAASIGNATURA_FK:
+            columns:
+                - ID_PLAN
+        DOCENTEASIGNATURA_FK:
+            columns:
+                - ID_DOCENTE
+    uniqueConstraints:
+        ASIGNATURA_PK:
+            columns:
+                - ID_ASIGNURA
+    id:
+        idAsignura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_ASIGNURA
+            generator:
+                strategy: IDENTITY
+    fields:
+        idPlan:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_PLAN
+        idDocente:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_DOCENTE
+        descripcionAsignatura:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: DESCRIPCION_ASIGNATURA
+    lifecycleCallbacks: {  }

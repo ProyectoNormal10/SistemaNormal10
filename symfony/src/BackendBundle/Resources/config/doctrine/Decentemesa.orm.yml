@@ -1,0 +1,31 @@
+BackendBundle\Entity\Decentemesa:
+    type: entity
+    table: decentemesa
+    indexes:
+        DECENTEMESA2_FK:
+            columns:
+                - ID_DOCENTE
+        DECENTEMESA_FK:
+            columns:
+                - ID_MESA
+    uniqueConstraints:
+        DECENTEMESA_PK:
+            columns:
+                - ID_MESA
+                - ID_DOCENTE
+    id:
+        idMesa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_MESA
+        idDocente:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_DOCENTE
+    lifecycleCallbacks: {  }

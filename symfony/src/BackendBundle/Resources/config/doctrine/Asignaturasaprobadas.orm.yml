@@ -1,0 +1,68 @@
+BackendBundle\Entity\Asignaturasaprobadas:
+    type: entity
+    table: asignaturasaprobadas
+    indexes:
+        ASIGNATURACURSADA_FK:
+            columns:
+                - ID_ASIGNURA
+        MATERIARENDIDA_FK:
+            columns:
+                - ID_MESA
+        ALUMNOAPROBADO_FK:
+            columns:
+                - ID_ALUMNO
+    uniqueConstraints:
+        ASIGNATURASAPROBADAS_PK:
+            columns:
+                - ID_APROBADAS
+    id:
+        idAprobadas:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: ID_APROBADAS
+            generator:
+                strategy: IDENTITY
+    fields:
+        idAsignura:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_ASIGNURA
+        idMesa:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_MESA
+        idAlumno:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: ID_ALUMNO
+        nroLibro:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: NRO_LIBRO
+        nroFolio:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: NRO_FOLIO
+        estado:
+            type: string
+            nullable: true
+            length: 10
+            options:
+                fixed: false
+            column: ESTADO
+    lifecycleCallbacks: {  }
